@@ -1,7 +1,10 @@
 import discord
 from discord.ext import commands
+from discord_slash import SlashCommand
+
 from googlesheet import GoogleSheet
 from random import choice
+
 import os
 from dotenv import load_dotenv
 
@@ -22,49 +25,65 @@ credentials = {
 
 gs = GoogleSheet(credentials)
 
-bot = commands.Bot(command_prefix='/')
+intents = discord.Intents.all()
+bot = commands.Bot(command_prefix='/', intents=intents)
+slash = SlashCommand(bot, sync_commands=True)
 
 
+@bot.event
+async def on_ready():
+    print('We have logged in as {0.user}'.format(bot))
+
+
+@slash.slash(name='random_film', description='Случайный фильм', guild_ids=[757574341012488312])
 @bot.command(name='random_film')
 async def random_film(ctx):
     await ctx.send('**Случайный фильм** - _%s_' % gs.get_random_film())
 
 
+@slash.slash(name='all_films', description='Все фильмы', guild_ids=[757574341012488312])
 @bot.command(name='all_films')
 async def all_films(ctx):
     await ctx.send('**Все фильмы:**\n' + gs.get_all_films())
 
 
+@slash.slash(name='viewed_films', description='Просмотренные фильмы', guild_ids=[757574341012488312])
 @bot.command(name='viewed_films')
 async def viewed_films(ctx):
     await ctx.send('**Просмотренные фильмы:**\n' + gs.get_viewed_films())
 
 
+@slash.slash(name='not_viewed_films', description='Непросмотренные фильмы', guild_ids=[757574341012488312])
 @bot.command(name='not_viewed_films')
 async def not_viewed_films(ctx):
     await ctx.send('**Непросмотренные фильмы:**\n' + gs.get_not_viewed_films())
 
 
+@slash.slash(name='all_films_amount', description='Количество всех фильмов', guild_ids=[757574341012488312])
 @bot.command(name='all_films_amount')
 async def all_films_amount(ctx):
     await ctx.send('**Количество всех фильмов** - _%s_' % gs.get_all_films_amount())
 
 
+@slash.slash(name='viewed_films_amount', description='Количество просмотренных фильмов', guild_ids=[757574341012488312])
 @bot.command(name='viewed_films_amount')
 async def viewed_films_amount(ctx):
     await ctx.send('**Количество просмотренных фильмов** - _%s_' % gs.get_viewed_films_amount())
 
 
+@slash.slash(name='not_viewed_films_amount', description='Количество непросмотренных фильмов', guild_ids=[757574341012488312])
 @bot.command(name='not_viewed_films_amount')
 async def not_viewed_films_amount(ctx):
     await ctx.send('**Количество непросмотренных фильмов** - _%s_' % gs.get_not_viewed_films_amount())
 
 
+@slash.slash(name='heads_or_tails', description='Орёл или решка', guild_ids=[757574341012488312])
 @bot.command(name='heads_or_tails')
 async def heads_or_tails(ctx):
     await ctx.send(choice(['Орёл', 'Решка']))
 
 
+@slash.slash(name='commands', description='Доступные команды', guild_ids=[757574341012488312])
 @bot.command(name='commands')
 async def commands(ctx):
     await ctx.send('**Доступные команды:**\n \
