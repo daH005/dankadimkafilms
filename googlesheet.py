@@ -2,6 +2,7 @@ import gspread
 from random import randint
 
 
+# Google-таблица
 class GoogleSheet:
     def __init__(self, credentials):
         gc = gspread.service_account_from_dict(credentials)

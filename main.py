@@ -8,8 +8,10 @@ from random import choice
 import os
 from dotenv import load_dotenv
 
+# Загружаем переменные окружения
 load_dotenv()
 
+# Реквизиты для работы с google-таблицей
 credentials = {
     "type": "service_account",
     "project_id": "dankadimkafilms",
@@ -23,6 +25,7 @@ credentials = {
     "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/filmbot-551%40dankadimkafilms.iam.gserviceaccount.com"
 }
 
+# Объект google-таблицы
 gs = GoogleSheet(credentials)
 
 intents = discord.Intents.all()
