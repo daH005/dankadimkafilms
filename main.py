@@ -60,18 +60,18 @@ async def not_viewed_films(ctx):
 
 
 @slash.slash(description='Количество всех фильмов')
-async def all_films_amount(ctx):
-    await ctx.send('**Количество всех фильмов** - _%s_' % gs.get_all_films_amount())
+async def all_films_count(ctx):
+    await ctx.send('**Количество всех фильмов** - _%s_' % gs.get_all_films_count())
 
 
 @slash.slash(description='Количество просмотренных фильмов')
-async def viewed_films_amount(ctx):
-    await ctx.send('**Количество просмотренных фильмов** - _%s_' % gs.get_viewed_films_amount())
+async def viewed_films_count(ctx):
+    await ctx.send('**Количество просмотренных фильмов** - _%s_' % gs.get_viewed_films_count())
 
 
 @slash.slash(description='Количество непросмотренных фильмов')
-async def not_viewed_films_amount(ctx):
-    await ctx.send('**Количество непросмотренных фильмов** - _%s_' % gs.get_not_viewed_films_amount())
+async def not_viewed_films_count(ctx):
+    await ctx.send('**Количество непросмотренных фильмов** - _%s_' % gs.get_not_viewed_films_count())
 
 
 @slash.slash(description='Орёл или решка')
@@ -86,9 +86,9 @@ async def help(ctx):
 /all_films - Список всех фильмов\n \
 /viewed_films - Список просмотренных фильмов\n \
 /not_viewed_films - Список непросмотренных фильмов\n \
-/all_films_amount - Количество всех фильмов\n \
-/viewed_films_amount - Количество просмотренных фильмов\n \
-/not_viewed_films_amount - Количество непросмотренных фильмов\n \
+/all_films_count - Количество всех фильмов\n \
+/viewed_films_count - Количество просмотренных фильмов\n \
+/not_viewed_films_count - Количество непросмотренных фильмов\n \
 /heads_or_tails - Орёл или решка')    
 
 
