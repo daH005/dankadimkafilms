@@ -61,15 +61,15 @@ async def heads_or_tails(ctx):
 
 @slash.slash(description='Доступные команды')
 async def help(ctx):
-    await ctx.send('**Доступные команды:**\n \
-/random_film - Случайный фильм\n \
-/all_films - Список всех фильмов\n \
-/viewed_films - Список просмотренных фильмов\n \
-/not_viewed_films - Список непросмотренных фильмов\n \
-/all_films_count - Количество всех фильмов\n \
-/viewed_films_count - Количество просмотренных фильмов\n \
-/not_viewed_films_count - Количество непросмотренных фильмов\n \
-/heads_or_tails - Орёл или решка')    
+    await ctx.send('**Доступные команды:**\n'
+                   '/random_film - Случайный фильм\n'
+                   '/all_films - Список всех фильмов\n'
+                   '/viewed_films - Список просмотренных фильмов\n'
+                   '/not_viewed_films - Список непросмотренных фильмов\n'
+                   '/all_films_count - Количество всех фильмов\n'
+                   '/viewed_films_count - Количество просмотренных фильмов\n'
+                   '/not_viewed_films_count - Количество непросмотренных фильмов\n'
+                   '/heads_or_tails - Орёл или решка')    
 
 
 if __name__ == '__main__':
