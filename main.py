@@ -19,6 +19,12 @@ async def on_ready():
     print('We have logged in as {0.user}'.format(bot))
 
 
+@bot.event
+async def on_message(message):
+    if message.content in INSULTS:
+        await message.channel.send(f'Сам ты, {message.content}!')
+
+
 @slash.slash(description='Случайный фильм')
 async def random_film(ctx):
     await ctx.send('**Случайный фильм** - _%s_' % gs.get_random_film())
