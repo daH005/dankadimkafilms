@@ -18,4 +18,5 @@ CREDENTIALS = {
     'client_x509_cert_url': 'https://www.googleapis.com/robot/v1/metadata/x509/filmbot-551%40dankadimkafilms.iam.gserviceaccount.com'
 }
 
-INSULTS = ['Пидр', 'Хуй', 'Гандон', 'Сука', 'Блядь', 'Казёл', 'Мразь']
+INSULTS = ['пидр', 'хуй', 'гандон', 'сука', 'блядь', 'козёл', 'мразь',
+           'казёл', 'казел', 'козел', 'блять', 'урод', 'ублюдок']

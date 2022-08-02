@@ -21,7 +21,7 @@ async def on_ready():
 
 @bot.event
 async def on_message(message):
-    if message.content in INSULTS:
+    if message.content.lower() in INSULTS:
         await message.channel.send(f'Сам ты, {message.content}!')
 
 
