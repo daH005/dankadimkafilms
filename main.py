@@ -25,42 +25,42 @@ async def on_message(message):
         await message.channel.send(f'Сам ты, {message.content}!')
 
 
-@slash.slash(description='Случайный фильм')
+@slash.slash(name='random', description='Случайный фильм')
 async def random_film(ctx):
     await ctx.send('**Случайный фильм** - _%s_' % gs.get_random_film())
 
 
-@slash.slash(description='Все фильмы')
+@slash.slash(name='all', description='Все фильмы')
 async def all_films(ctx):
     await ctx.send('**Все фильмы:**\n' + gs.get_all_films())
 
 
-@slash.slash(description='Просмотренные фильмы')
+@slash.slash(name='viewed', description='Просмотренные фильмы')
 async def viewed_films(ctx):
     await ctx.send('**Просмотренные фильмы:**\n' + gs.get_viewed_films())
 
 
-@slash.slash(description='Непросмотренные фильмы')
+@slash.slash(name='not viewed', description='Непросмотренные фильмы')
 async def not_viewed_films(ctx):
     await ctx.send('**Непросмотренные фильмы:**\n' + gs.get_not_viewed_films())
 
 
-@slash.slash(description='Количество всех фильмов')
+@slash.slash(name='all count', description='Количество всех фильмов')
 async def all_films_count(ctx):
     await ctx.send('**Количество всех фильмов** - _%s_' % gs.get_all_films_count())
 
 
-@slash.slash(description='Количество просмотренных фильмов')
+@slash.slash(name='viewed count', description='Количество просмотренных фильмов')
 async def viewed_films_count(ctx):
     await ctx.send('**Количество просмотренных фильмов** - _%s_' % gs.get_viewed_films_count())
 
 
-@slash.slash(description='Количество непросмотренных фильмов')
+@slash.slash(name='not viewed count', description='Количество непросмотренных фильмов')
 async def not_viewed_films_count(ctx):
     await ctx.send('**Количество непросмотренных фильмов** - _%s_' % gs.get_not_viewed_films_count())
 
 
-@slash.slash(description='Орёл или решка')
+@slash.slash(name='heads or tails', description='Орёл или решка')
 async def heads_or_tails(ctx):
     await ctx.send(choice(['Орёл', 'Решка']))
 
