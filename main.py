@@ -40,27 +40,27 @@ async def viewed_films(ctx):
     await ctx.send('**Просмотренные фильмы:**\n' + gs.get_viewed_films())
 
 
-@slash.slash(name='not viewed', description='Непросмотренные фильмы')
+@slash.slash(name='not-viewed', description='Непросмотренные фильмы')
 async def not_viewed_films(ctx):
     await ctx.send('**Непросмотренные фильмы:**\n' + gs.get_not_viewed_films())
 
 
-@slash.slash(name='all count', description='Количество всех фильмов')
+@slash.slash(name='all-count', description='Количество всех фильмов')
 async def all_films_count(ctx):
     await ctx.send('**Количество всех фильмов** - _%s_' % gs.get_all_films_count())
 
 
-@slash.slash(name='viewed count', description='Количество просмотренных фильмов')
+@slash.slash(name='viewed-count', description='Количество просмотренных фильмов')
 async def viewed_films_count(ctx):
     await ctx.send('**Количество просмотренных фильмов** - _%s_' % gs.get_viewed_films_count())
 
 
-@slash.slash(name='not viewed count', description='Количество непросмотренных фильмов')
+@slash.slash(name='not-viewed-count', description='Количество непросмотренных фильмов')
 async def not_viewed_films_count(ctx):
     await ctx.send('**Количество непросмотренных фильмов** - _%s_' % gs.get_not_viewed_films_count())
 
 
-@slash.slash(name='heads or tails', description='Орёл или решка')
+@slash.slash(name='heads-or-tails', description='Орёл или решка')
 async def heads_or_tails(ctx):
     await ctx.send(choice(['Орёл', 'Решка']))
 
